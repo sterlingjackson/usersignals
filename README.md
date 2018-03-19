@@ -4,9 +4,9 @@ Supports capturing browser errors, pageviews, custom events, clicks and form sub
 
 You will need to update analytics.path to point to the domain your API endpoints reside on and develop endpoints to handle the JSON payload sent by analytics.js.
 
-##USAGE
+## USAGE
 
-###Analytics Core
+### Analytics Core
 
 ```
 <script src="//www.usersignals.io/analytics.js"></script>
@@ -20,7 +20,7 @@ You will need to update analytics.path to point to the domain your API endpoints
 </script>
 ```
 
-###Custom Events
+### Custom Events
 
 ```
 <script>
@@ -28,7 +28,7 @@ You will need to update analytics.path to point to the domain your API endpoints
 </script>
 ```
 
-##API ENDPOINTS
+## API ENDPOINTS
 
 **/error**
 - userid
