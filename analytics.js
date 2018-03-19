@@ -111,7 +111,9 @@ analytics.getDeviceType = function(ua) {
 // ESTABLISH BINDINGS FOR EVENT CAPTURE
 // Initialize analytics when DOM is ready.
 window.onload = function() {
-  analytics.pageview();
+  if (!analytics.disablePageTracking) {
+    analytics.pageview();
+  }
 }
 
 // Capture browser errors.
