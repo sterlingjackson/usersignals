@@ -1,11 +1,14 @@
+# analytics.js
+
 Supports capturing browser errors, pageviews, custom events, clicks and form submissions for registered users at the per-user level using ES5 and polyfills to ensure functionality across the maximum number of devices.
 
 You will need to update analytics.path to point to the domain your API endpoints reside on and develop endpoints to handle the JSON payload sent by analytics.js.
 
-USAGE
+##USAGE
 
-Analytics Core
+###Analytics Core
 
+```
 <script src="//www.usersignals.io/analytics.js"></script>
 <script>
   usersignals.userid = 'APP_USER_ID';
@@ -15,16 +18,19 @@ Analytics Core
   analytics.disablePageTracking = false; (Optional, enable to ignore pageviews.)
   analytics.disableClickTracking = false; (Optional, enable to ignore clicks.)
 </script>
+```
 
-Custom Events
+###Custom Events
 
+```
 <script>
   usersignals.event(EVENT_DESCRIPTION, [value1, value2, value3]);
 </script>
+```
 
-API ENDPOINTS
+##API ENDPOINTS
 
-/error
+**/error**
 - userid
 - key
 - message
@@ -33,7 +39,7 @@ API ENDPOINTS
 - client
 - sessionid
 
-/pageview
+**/pageview**
 - userid
 - key
 - url
@@ -43,7 +49,7 @@ API ENDPOINTS
 - tags
 - sessionid
     
-/event
+**/event**
 - userid
 - key
 - event
@@ -54,7 +60,7 @@ API ENDPOINTS
 - sessionid
 
 
-/click
+**/click**
 - userid
 - key
 - url
