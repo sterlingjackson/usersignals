@@ -9,14 +9,14 @@ You will need to update analytics.path to point to the domain your API endpoints
 ### Analytics Core
 
 ```
-<script src="//www.usersignals.io/analytics.js"></script>
+<script src="//www.yourdomain.com/analytics.js"></script>
 <script>
-  usersignals.userid = 'APP_USER_ID';
-  usersignals.key = '0e8ae88663de88fd357262d27503bca1';
-  usersignals.tags = [value1, value2, value3];
-  analytics.disableErrorTracking = false; (Optional, enable to ignore browser errors.)
-  analytics.disablePageTracking = false; (Optional, enable to ignore pageviews.)
-  analytics.disableClickTracking = false; (Optional, enable to ignore clicks.)
+  analytics.userid = 'APP_USER_ID';
+  analytics.key = '0e8ae88663de88fd357262d27503bca1';
+  analytics.tags = [value1, value2, value3];
+  analytics.disableErrorTracking = false; // (Optional, enable to ignore browser errors.)
+  analytics.disablePageTracking = false; // (Optional, enable to ignore pageviews.)
+  analytics.disableClickTracking = false; // (Optional, enable to ignore clicks.)
 </script>
 ```
 
@@ -24,7 +24,7 @@ You will need to update analytics.path to point to the domain your API endpoints
 
 ```
 <script>
-  usersignals.event(EVENT_DESCRIPTION, [value1, value2, value3]);
+  analytics.event(EVENT_DESCRIPTION, [value1, value2, value3]);
 </script>
 ```
 
