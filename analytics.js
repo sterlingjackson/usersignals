@@ -21,7 +21,6 @@ analytics.sessionid = localStorage.getItem('analytics-sessionid') || analytics.s
 analytics.error = function(message) {
   var data = {
     userid: analytics.userid,
-    key: analytics.key,
     message: message,
     url: window.location.href,
     device: analytics.getDeviceType(navigator.userAgent),
@@ -42,7 +41,6 @@ analytics.pageview = function() {
   analytics.device = analytics.getDeviceType(navigator.userAgent);
   var data = {
     userid: analytics.userid,
-    key: analytics.key,
     url: window.location.href,
     device: analytics.getDeviceType(navigator.userAgent),
     client: navigator.userAgent,
@@ -63,7 +61,6 @@ analytics.pageview = function() {
 analytics.event = function(event) {
   var data = {
     userid: analytics.userid,
-    key: analytics.key,
     event: event,
     url: window.location.href,
     device: analytics.getDeviceType(navigator.userAgent),
@@ -85,7 +82,6 @@ analytics.click = function(e) {
   var e = e.target || window.event.target;
   var data = {
     userid: analytics.userid,
-    key: analytics.key,
     url: window.location.href,
     device: analytics.getDeviceType(navigator.userAgent),
     client: navigator.userAgent,
