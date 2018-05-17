@@ -22,16 +22,16 @@ exports.handler = async (event) => {
     await client.query('INSERT INTO events (instance_id, user_id, event) VALUES ($1, $2, $3)', params);
     await client.end();
     return {
-        'statusCode': 200,
-        'headers': { 'Content-Type': 'application/json' },
-        'body': JSON.stringify({ 'success': true })
+      'statusCode': 200,
+      'headers': { 'Content-Type': 'application/json' },
+      'body': JSON.stringify({ 'success': true })
     }
   }
   catch(err) {
     return {
-        'statusCode': 500,
-        'headers': { 'Content-Type': 'application/json' },
-        'body': JSON.stringify({ 'success': false })
+      'statusCode': 500,
+      'headers': { 'Content-Type': 'application/json' },
+      'body': JSON.stringify({ 'success': false })
     }
   }
 };
