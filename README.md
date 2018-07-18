@@ -11,12 +11,12 @@ You will need to update analytics.path to point to the domain your API endpoints
 ```
 <script src="//www.yourdomain.com/analytics.js"></script>
 <script>
-  analytics.userid = 'APP_USER_ID';
+  analytics.userid = 'USER_ID'; // This is the unique ID you have associated with a particular user.
   analytics.key = '0e8ae88663de88fd357262d27503bca1';
-  analytics.tags = [value1, value2, value3];
-  analytics.disableErrorTracking = false; // (Optional, enable to ignore browser errors.)
-  analytics.disablePageTracking = false; // (Optional, enable to ignore pageviews.)
-  analytics.disableClickTracking = false; // (Optional, enable to ignore clicks.)
+  analytics.tags = [value1, value2, value3]; // Automatically passed into tracked events.
+  analytics.disableErrorTracking = false; // (Enable to stop tracking browser errors.)
+  analytics.disablePageTracking = false; // (Enable to stop tracking pageviews.)
+  analytics.disableClickTracking = false; // (Enable to stop tracking clicks.)
 </script>
 ```
 
@@ -24,7 +24,7 @@ You will need to update analytics.path to point to the domain your API endpoints
 
 ```
 <script>
-  analytics.event(EVENT_DESCRIPTION, [value1, value2, value3]);
+  analytics.event(EVENT_DESCRIPTION);
 </script>
 ```
 

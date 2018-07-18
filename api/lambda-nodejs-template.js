@@ -1,17 +1,37 @@
-var mysql = require('mysql');
+const { Client } = require('pg');
 
-exports.handler = function(event, context, callback) {
-  // console.log(event);
-  var payload = JSON.parse(event.body);
+exports.handler = async (event) => {
+  const data = JSON.parse(event.body);
   
-  var connection = mysql.createConnection({
-    host     : '[rds_host]',
-    user     : '[rds_user]',
-    password : '[rds_password]',
-    database : '[rds_database]'
-  });
+  const params = [
+    data.instance_id,
+    data.userid,
+    data.event
+  ];
   
-  connection.query("INSERT INTO items (field, field2, field3) VALUES (1, 2, 3)");
+  try {
+    const client = new Client({
+      host     : '[rds_host]',
+      user     : '[rds_user]',
+      password : '[rds_password]',
+      database : '[rds_database]',
+      port:      '[rds_port]',
+    });
   
-  callback(null, event);
+    await client.connect();
+    await client.query('INSERT INTO events (instance_id, user_id, event) VALUES ($1, $2, $3)', params);
+    await client.end();
+    return {
+      'statusCode': 200,
+      'headers': { 'Content-Type': 'application/json' },
+      'body': JSON.stringify({ 'success': true })
+    }
+  }
+  catch(err) {
+    return {
+      'statusCode': 500,
+      'headers': { 'Content-Type': 'application/json' },
+      'body': JSON.stringify({ 'success': false })
+    }
+  }
 };

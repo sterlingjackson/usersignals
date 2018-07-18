@@ -8,7 +8,7 @@ var analytics = {
 }
 
 // Set session ID
-// This session ID is used for session unification once a user ID is available.
+// This session ID can be used for session unification when a user ID becomes available.
 analytics.setSessionID = function() {
   var newSessionID = Date.now() + '-' + (Math.random().toString(36)+'00000000000000000').slice(2, 12+2)
   localStorage.setItem('analytics-sessionid', newSessionID);
